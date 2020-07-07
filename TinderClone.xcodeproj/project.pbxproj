@@ -9,12 +9,14 @@
 /* Begin PBXBuildFile section */
 		FAA726FB24B457B600286FDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA726FA24B457B600286FDA /* AppDelegate.swift */; };
 		FAA726FD24B457B600286FDA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA726FC24B457B600286FDA /* SceneDelegate.swift */; };
-		FAA726FF24B457B600286FDA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA726FE24B457B600286FDA /* ViewController.swift */; };
 		FAA7270224B457B600286FDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAA7270024B457B600286FDA /* Main.storyboard */; };
-		FAA7270424B457B800286FDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAA7270324B457B800286FDA /* Assets.xcassets */; };
 		FAA7270724B457B800286FDA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAA7270524B457B800286FDA /* LaunchScreen.storyboard */; };
 		FAA7271224B457B800286FDA /* TinderCloneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA7271124B457B800286FDA /* TinderCloneTests.swift */; };
 		FAA7271D24B457B800286FDA /* TinderCloneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA7271C24B457B800286FDA /* TinderCloneUITests.swift */; };
+		FAA7273124B45E4D00286FDA /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA7273024B45E4D00286FDA /* HomeController.swift */; };
+		FAA7273324B45FB800286FDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAA7273224B45FB800286FDA /* Assets.xcassets */; };
+		FAA7273724B4604100286FDA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA7273624B4604100286FDA /* Extensions.swift */; };
+		FAA7273924B4620900286FDA /* HomeNavigationStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA7273824B4620900286FDA /* HomeNavigationStackView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,9 +40,7 @@
 		FAA726F724B457B600286FDA /* TinderClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinderClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAA726FA24B457B600286FDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAA726FC24B457B600286FDA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FAA726FE24B457B600286FDA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FAA7270124B457B600286FDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		FAA7270324B457B800286FDA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAA7270624B457B800286FDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAA7270824B457B800286FDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAA7270D24B457B800286FDA /* TinderCloneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TinderCloneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +49,10 @@
 		FAA7271824B457B800286FDA /* TinderCloneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TinderCloneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAA7271C24B457B800286FDA /* TinderCloneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinderCloneUITests.swift; sourceTree = "<group>"; };
 		FAA7271E24B457B800286FDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAA7273024B45E4D00286FDA /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		FAA7273224B45FB800286FDA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../Downloads/Assets.xcassets; sourceTree = "<group>"; };
+		FAA7273624B4604100286FDA /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		FAA7273824B4620900286FDA /* HomeNavigationStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationStackView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,11 +103,16 @@
 		FAA726F924B457B600286FDA /* TinderClone */ = {
 			isa = PBXGroup;
 			children = (
+				FAA7272F24B45D7400286FDA /* Model */,
+				FAA7272E24B45D7000286FDA /* View */,
+				FAA7272D24B45D6C00286FDA /* ViewModel */,
+				FAA7272C24B45D6800286FDA /* Controller */,
+				FAA7272B24B45D5600286FDA /* API */,
+				FAA7272A24B45D4E00286FDA /* Utils */,
 				FAA726FA24B457B600286FDA /* AppDelegate.swift */,
 				FAA726FC24B457B600286FDA /* SceneDelegate.swift */,
-				FAA726FE24B457B600286FDA /* ViewController.swift */,
 				FAA7270024B457B600286FDA /* Main.storyboard */,
-				FAA7270324B457B800286FDA /* Assets.xcassets */,
+				FAA7273224B45FB800286FDA /* Assets.xcassets */,
 				FAA7270524B457B800286FDA /* LaunchScreen.storyboard */,
 				FAA7270824B457B800286FDA /* Info.plist */,
 			);
@@ -126,6 +135,51 @@
 				FAA7271E24B457B800286FDA /* Info.plist */,
 			);
 			path = TinderCloneUITests;
+			sourceTree = "<group>";
+		};
+		FAA7272A24B45D4E00286FDA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				FAA7273624B4604100286FDA /* Extensions.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		FAA7272B24B45D5600286FDA /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		FAA7272C24B45D6800286FDA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FAA7273024B45E4D00286FDA /* HomeController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FAA7272D24B45D6C00286FDA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FAA7272E24B45D7000286FDA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FAA7273824B4620900286FDA /* HomeNavigationStackView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FAA7272F24B45D7400286FDA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAA7270724B457B800286FDA /* LaunchScreen.storyboard in Resources */,
-				FAA7270424B457B800286FDA /* Assets.xcassets in Resources */,
+				FAA7273324B45FB800286FDA /* Assets.xcassets in Resources */,
 				FAA7270224B457B600286FDA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,9 +313,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAA726FF24B457B600286FDA /* ViewController.swift in Sources */,
+				FAA7273724B4604100286FDA /* Extensions.swift in Sources */,
 				FAA726FB24B457B600286FDA /* AppDelegate.swift in Sources */,
+				FAA7273924B4620900286FDA /* HomeNavigationStackView.swift in Sources */,
 				FAA726FD24B457B600286FDA /* SceneDelegate.swift in Sources */,
+				FAA7273124B45E4D00286FDA /* HomeController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
