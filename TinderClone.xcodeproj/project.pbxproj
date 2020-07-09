@@ -17,6 +17,8 @@
 		FAA7273324B45FB800286FDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAA7273224B45FB800286FDA /* Assets.xcassets */; };
 		FAA7273724B4604100286FDA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA7273624B4604100286FDA /* Extensions.swift */; };
 		FAA7273924B4620900286FDA /* HomeNavigationStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA7273824B4620900286FDA /* HomeNavigationStackView.swift */; };
+		FAA7273B24B47B0900286FDA /* BottomControlStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA7273A24B47B0900286FDA /* BottomControlStackView.swift */; };
+		FAA7273D24B4C74B00286FDA /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA7273C24B4C74B00286FDA /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		FAA7273224B45FB800286FDA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../Downloads/Assets.xcassets; sourceTree = "<group>"; };
 		FAA7273624B4604100286FDA /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		FAA7273824B4620900286FDA /* HomeNavigationStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationStackView.swift; sourceTree = "<group>"; };
+		FAA7273A24B47B0900286FDA /* BottomControlStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomControlStackView.swift; sourceTree = "<group>"; };
+		FAA7273C24B4C74B00286FDA /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +175,8 @@
 			isa = PBXGroup;
 			children = (
 				FAA7273824B4620900286FDA /* HomeNavigationStackView.swift */,
+				FAA7273A24B47B0900286FDA /* BottomControlStackView.swift */,
+				FAA7273C24B4C74B00286FDA /* CardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -313,10 +319,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAA7273D24B4C74B00286FDA /* CardView.swift in Sources */,
 				FAA7273724B4604100286FDA /* Extensions.swift in Sources */,
 				FAA726FB24B457B600286FDA /* AppDelegate.swift in Sources */,
 				FAA7273924B4620900286FDA /* HomeNavigationStackView.swift in Sources */,
 				FAA726FD24B457B600286FDA /* SceneDelegate.swift in Sources */,
+				FAA7273B24B47B0900286FDA /* BottomControlStackView.swift in Sources */,
 				FAA7273124B45E4D00286FDA /* HomeController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,6 +16,8 @@ class HomeNavigationStackView: UIStackView {
     //MARK: -Liftecyle
     override init(frame: CGRect) {
         super.init(frame: frame)
+        heightAnchor.constraint(equalToConstant: 80).isActive = true
+        tinderIcon.contentMode = .scaleAspectFit
         settingButton.setImage(#imageLiteral(resourceName: "top_left_profile").withRenderingMode(.alwaysOriginal), for: .normal)
         messageButton.setImage(#imageLiteral(resourceName: "top_messages_icon").withRenderingMode(.alwaysOriginal),for: .normal)
         [settingButton, UIView(), tinderIcon, UIView(), messageButton].forEach { (view) in

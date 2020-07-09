@@ -2,8 +2,8 @@
 //  Extensions.swift
 //  TinderTutorial
 //
-//  Created by Stephen Dowless on 4/30/20.
-//  Copyright © 2020 Stephan Dowless. All rights reserved.
+//  Created by MacBook on 07/07/2020.
+//  Copyright © 2020 MacBook. All rights reserved.
 //
 
 import UIKit
