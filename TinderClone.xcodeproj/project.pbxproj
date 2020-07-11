@@ -19,6 +19,8 @@
 		FAA7273924B4620900286FDA /* HomeNavigationStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA7273824B4620900286FDA /* HomeNavigationStackView.swift */; };
 		FAA7273B24B47B0900286FDA /* BottomControlStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA7273A24B47B0900286FDA /* BottomControlStackView.swift */; };
 		FAA7273D24B4C74B00286FDA /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA7273C24B4C74B00286FDA /* CardView.swift */; };
+		FAA774DD24B82F1F002823A6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA774DC24B82F1F002823A6 /* User.swift */; };
+		FAA774DF24B82FE0002823A6 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA774DE24B82FE0002823A6 /* CardViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		FAA7273824B4620900286FDA /* HomeNavigationStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationStackView.swift; sourceTree = "<group>"; };
 		FAA7273A24B47B0900286FDA /* BottomControlStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomControlStackView.swift; sourceTree = "<group>"; };
 		FAA7273C24B4C74B00286FDA /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		FAA774DC24B82F1F002823A6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		FAA774DE24B82FE0002823A6 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +171,7 @@
 		FAA7272D24B45D6C00286FDA /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				FAA774DE24B82FE0002823A6 /* CardViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -184,6 +189,7 @@
 		FAA7272F24B45D7400286FDA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FAA774DC24B82F1F002823A6 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -323,9 +329,11 @@
 				FAA7273724B4604100286FDA /* Extensions.swift in Sources */,
 				FAA726FB24B457B600286FDA /* AppDelegate.swift in Sources */,
 				FAA7273924B4620900286FDA /* HomeNavigationStackView.swift in Sources */,
+				FAA774DD24B82F1F002823A6 /* User.swift in Sources */,
 				FAA726FD24B457B600286FDA /* SceneDelegate.swift in Sources */,
 				FAA7273B24B47B0900286FDA /* BottomControlStackView.swift in Sources */,
 				FAA7273124B45E4D00286FDA /* HomeController.swift in Sources */,
+				FAA774DF24B82FE0002823A6 /* CardViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
