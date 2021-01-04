@@ -33,14 +33,16 @@ class HomeNavigationStackView: UIStackView {
         isLayoutMarginsRelativeArrangement = true
         layoutMargins = .init(top: 0, left: 16, bottom: 0, right: 16)
         settingButton.addTarget(self, action: #selector(handleShowSettings), for: .touchUpInside)
+        messageButton.addTarget(self, action: #selector(handleMessages), for: .touchUpInside)
     }
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     @objc func handleShowSettings(){
+        delegate?.showSettings()
         
     }
     @objc func handleMessages(){
-        
+        delegate?.showMessages()
     }
 }

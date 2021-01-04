@@ -8,9 +8,11 @@
 
 import Foundation
 import UIKit
+import FirebaseAuth
 
 class RegistrationController: UIViewController{
     //MARK: - Properties
+    private var profileImage: UIImage?
     private var viewModel = RegistrationViewModel()
     private let selectPhotoButton: UIButton = {
         let button = UIButton(type: .system)
@@ -64,9 +66,22 @@ class RegistrationController: UIViewController{
         present(picker, animated: true,completion: nil)
     }
     @objc func handleRegister(){
-        print("DEBUG: Register user here...")
+        guard let email = emailTextField.text else{return}
+        guard let password = passwordTextField.text else{return}
+        guard let fullname = fullnameTextField.text else{return}
+        guard let profileImage = profileImage else {return}
+        let credentials = AuthCredentials(email: email, password: password, fullname: fullname, profileImage: profileImage)
+        AuthService.registerUser(withCredentials: credentials) { (error) in
+            if let error = error {
+                print("DEBUG: Error signing user up \(error.localizedDescription)")
+            }
+            print("DEBUG: Successfully register user...")
+        }
+        self.dismiss(animated: true, completion: nil)
+        
     }
     @objc func handleShowLogin(){
+        print("debug")
         navigationController?.popViewController(animated: true)
     }
     //MARK: - Helpers
@@ -103,12 +118,13 @@ class RegistrationController: UIViewController{
 extension RegistrationController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[.originalImage] as? UIImage
+        profileImage = image
         selectPhotoButton.setImage(image?.withRenderingMode(.alwaysOriginal), for: .normal)
         selectPhotoButton.layer.borderColor = UIColor(white: 1, alpha: 0.7).cgColor
         selectPhotoButton.layer.borderWidth = 3
         selectPhotoButton.layer.cornerRadius = 10
         selectPhotoButton.imageView?.contentMode = .scaleAspectFill
-        self.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
 }

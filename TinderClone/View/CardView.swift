@@ -8,14 +8,22 @@
 
 import Foundation
 import UIKit
+import SDWebImage
 enum SwipeDirection: Int {
     case left = -1
     case right = 1
 }
+protocol CardViewDelegate: class {
+    func cardView(_ view: CardView, wantsToShowProfileFor user: User)
+}
 class CardView: UIView {
     //MARK: - Properties
+    weak var delegate: CardViewDelegate?
     private let gradientLayer = CAGradientLayer()
+    
+    private lazy var barStackView = SegmentedBarView(numberOfSegment: viewModel.imageURLs.count)
     private let viewModel: CardViewModel
+   
     private let imageView: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
@@ -31,18 +39,23 @@ class CardView: UIView {
     private lazy var infoButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(#imageLiteral(resourceName: "info_icon").withRenderingMode(.alwaysOriginal), for: .normal)
+        button.addTarget(self, action: #selector(handleShowProfile), for: .touchUpInside)
         return button
     }()
     //MARK: - Lifecycle
     init(viewModel: CardViewModel) {
         self.viewModel = viewModel
         super.init(frame: .zero)
+        
         configureGestureRecognizers()
-        imageView.image = viewModel.user.images.first
+        imageView.sd_setImage(with: viewModel.imageUrl)
+        //imageView.image = viewModel.user.images.first
         backgroundColor = .systemPurple
         layer.cornerRadius = 10
         clipsToBounds = true
         addSubview(imageView)
+        imageView.fillSuperview()
+       // configureBarStackView()
         configureGradientLayer()
         addSubview(infoLable)
         infoLable.anchor(left: leftAnchor,bottom: bottomAnchor,right: rightAnchor,paddingLeft: 16,paddingBottom: 16, paddingRight: 16)
@@ -51,7 +64,7 @@ class CardView: UIView {
         infoButton.setDimensions(height: 48, width: 48)
         infoButton.centerY(inView: infoLable)
         infoButton.anchor(right: rightAnchor,paddingRight: 16)
-        //configureGradientLayer()
+        configureGradientLayer()
     }
     override func layoutSubviews() {
         gradientLayer.frame = self.frame
@@ -80,7 +93,11 @@ class CardView: UIView {
         }else{
             viewModel.showPreviousPhoto()
         }
-        imageView.image = viewModel.imageToShow
+      imageView.sd_setImage(with: viewModel.imageUrl)
+      barStackView.setHighLighted(index: viewModel.index)
+    }
+    @objc func handleShowProfile() {
+        delegate?.cardView(self,wantsToShowProfileFor: viewModel.user)
     }
     //MARK: - Helpers
     func panCard(sender: UIPanGestureRecognizer){
@@ -106,6 +123,10 @@ class CardView: UIView {
                 self.removeFromSuperview()
             }
         }
+    }
+    func configureBarStackView() {
+        addSubview(barStackView)
+        barStackView.anchor(top: topAnchor, left: leftAnchor, right: rightAnchor, paddingTop: 8, paddingLeft: 8, paddingRight: 8, height: 4)
     }
     func configureGradientLayer() {
         gradientLayer.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
